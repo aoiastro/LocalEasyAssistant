@@ -1,0 +1,27 @@
+name: LocalEasyAssistant
+options:
+  bundleIdPrefix: com.aoi
+targets:
+  LocalEasyAssistant:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: LocalEasyAssistant/Sources
+      - path: LocalEasyAssistant/Resources
+    settings:
+      GENERATE_INFOPLIST_FILE: YES
+      PRODUCT_BUNDLE_IDENTIFIER: com.aoi.LocalEasyAssistant
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      INFOPLIST_KEY_UILaunchScreen_Generation: YES
+      INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+    dependencies:
+      - package: LocalLLMClient
+      - package: GRDB
+packages:
+  LocalLLMClient:
+    url: https://github.com/tattn/LocalLLMClient.git
+    branch: main
+  GRDB:
+    url: https://github.com/groue/GRDB.swift.git
+    from: 6.27.0
